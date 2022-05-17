@@ -1,6 +1,6 @@
 import {Replicache} from 'replicache';
 
-test('tslocke example', async () => {
+test('basic test', async () => {
   const rep = new Replicache({
     name: 'oops',
     mutators: {},
