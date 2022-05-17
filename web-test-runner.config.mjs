@@ -23,14 +23,17 @@ export default {
       retries: 0, 
     },
   },
-  groups: [
-    {
-      name: 'Main',
-      files: [
-        'src/*.test.ts',
-      ],
-      browsers: [chromium],
-    },
+  files: [
+    'src/*.test.ts',
   ],
+  browsers: [chromium],
+  testRunnerHtml: (testFramework) =>
+    `<!doctype html>
+      <html>
+      <body>
+        <script>window.process = { env: { NODE_ENV: "development" } }</script>
+        <script type="module" src="${testFramework}"></script>
+      </body>
+    </html>`,
 };
 
